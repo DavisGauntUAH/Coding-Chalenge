@@ -1,7 +1,4 @@
 
-from requests import head
-
-
 class Node:
     """
     contains the structure of the node of a linked list
@@ -95,15 +92,21 @@ def main():
     """
     
     sl1 = Llist()
+    sl2 = Llist()
     l1 = [1,2,3,4,5]
+    l2 = [1,2,3,4,5]
     
     sl1.insert_list(l1)
+    sl2.insert_list(l2)
     
-    swap(sl1, 3)
+    swap(sl1, 2)
+    swap(sl2, 3)
     
     l_print(sl1)
+    print("\n")
+    l_print(sl2)
     
-    return
+
 
 def swap(list, interval):
     """
