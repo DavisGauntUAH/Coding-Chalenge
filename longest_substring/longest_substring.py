@@ -1,11 +1,5 @@
 
 
-def main():
-    """
-    prints test case
-    """
-    print(length_of_longest_substring("abcabcbb"))
-
 def length_of_longest_substring(in_str):
     """
     takes in a string and identifies the
@@ -28,6 +22,13 @@ def length_of_longest_substring(in_str):
     
     return max_len
     
+def main():
+    """
+    prints test case
+    """
+    print(length_of_longest_substring("abcabcbb"))
+    print(length_of_longest_substring("bbbb"))
+    print(length_of_longest_substring("pwwkew"))
 
 if __name__ == '__main__':
     main()
