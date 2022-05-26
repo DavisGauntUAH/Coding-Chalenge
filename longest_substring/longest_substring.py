@@ -1,6 +1,11 @@
 
 
 class longest_substring:
+    """
+    object that will find the length of the longest
+    substring in a given string
+    """
+    
     def __init__(self, in_str=None):
         """
         creates new instance of longest_substring
