@@ -17,11 +17,13 @@ class longest_substring:
         
 
 
-    def length_of_longest_substring(self, in_str):
+    def length_of_longest_substring(self, in_str=None):
         """
         takes in a string and identifies the
         length of the longest string withough any repeats
         """
+        
+        if in_str == None: in_str = self.str
         
         last_seen = {}
         max_len = 0

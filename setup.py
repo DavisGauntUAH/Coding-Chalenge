@@ -14,7 +14,7 @@ setup(
         'Licesnse :: Freeware',
         'Programing Launguage :: Python :: 3+',
     ],
-    package=find_packages(exclude=['docs', 'tests*']),
+    packages=find_packages(include=['longest_substring']),
     include_package_data=True
     
 )
