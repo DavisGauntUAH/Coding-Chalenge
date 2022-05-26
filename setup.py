@@ -14,7 +14,10 @@ setup(
         'Licesnse :: Freeware',
         'Programing Launguage :: Python :: 3+',
     ],
-    packages=find_packages(include=['longest_substring', 'next_permutation']),
+    packages=find_packages(include=['longest_substring',
+                                    'next_permutation',
+                                    'reverse_nodes'
+                                    ]),
     include_package_data=True
     
 )
