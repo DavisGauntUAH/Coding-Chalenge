@@ -2,6 +2,11 @@
 
 class longest_substring:
     def __init__(self, in_str=None):
+        """
+        creates new instance of longest_substring
+        and sets self.str = to in_str assuming it is a string type
+        if not it throws an error
+        """
         
         if type(in_str) == str or in_str  == None:
             self.str = in_str
@@ -9,6 +14,10 @@ class longest_substring:
             raise TypeError(f"Invalid type: {type(in_str)} != String")
     
     def setStr(self, in_str):
+        """
+        sets self.str to in_str after confirming in_str is a
+        string
+        """
         
         if type(in_str) == str:
             self.str = in_str
