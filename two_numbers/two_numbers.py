@@ -64,7 +64,7 @@ class Llist:
 #    sl5.insert_list(l5)
 #    sl6.insert_list(l6)
     
-#    ans1 = addTwoNumbers(sl1, sl2)
+#   ans1 = addTwoNumbers(sl1, sl2)
 #    ans2 = addTwoNumbers(sl3, sl4)
 #    ans3 = addTwoNumbers(sl5, sl6)
     
@@ -95,6 +95,11 @@ def lList_to_int(l_list):
 
 class two_numbers:
     def __init__(self, num1=[2,4,3], num2=[5,6,4]):
+        """
+        creates a two numbers argument and sets num1&2 to default
+        values if none are given
+        """
+        
         self.num1 = Llist()
         self.num2 = Llist()
         
@@ -103,11 +108,18 @@ class two_numbers:
         
     
     def set_num1(self, num):
+        """
+        sets num1 to the given new value
+        """
+        
         self.num1.head = None
         self.num1.insert_list(num)
     
     
     def set_num2(self, num):
+        """
+        sets num2 to the given new value
+        """
         self.num2.head = None
         self.num2.insert_list(num)
     
@@ -156,6 +168,6 @@ class two_numbers:
 
     
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
     
-    main()
+#    main()
