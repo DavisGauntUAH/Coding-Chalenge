@@ -17,11 +17,13 @@ class next_perm:
             
             if pre_perm[idx] > pre_perm[idx-1]:
                 
-                for jdx in range (len(pre_perm)-1, idx-1, -1):
+                #for jdx in range (len(pre_perm)-1, idx-1, -1):  to return to origin
+                #coment out line below and tab in if statement
+                jdx = self.get_next_biggest(pre_perm, idx-1)
                     
-                    if jdx > idx-1:
-                        pre_perm[idx-1], pre_perm[jdx] = pre_perm[jdx], pre_perm[idx-1]
-                        return self.reverse(pre_perm, idx)
+                if jdx > idx-1:
+                    pre_perm[idx-1], pre_perm[jdx] = pre_perm[jdx], pre_perm[idx-1]
+                    return self.reverse(pre_perm, idx)
                     
                 return self.reverse(pre_perm, idx)
             
@@ -35,6 +37,38 @@ class next_perm:
             
         r_list = r_list[:fdx] + r_list[:fdx-1:-1]
         return(r_list)
+    
+    def get_next_biggest(self, list, target_idx):
+        
+        low = target_idx+1
+        high = len(list)-1
+        mid = 0
+        
+        while low < high:
+            
+            mid = (high +low) // 2
+            
+            if list[target_idx]+1 == list[mid]:
+                for idx in range(mid, len(list)):
+                    if list[idx] <= list[target_idx]: return idx -1
+                    
+            elif list[target_idx] == list[mid]:
+                for idx in range(mid-1, target_idx, -1):
+                    if list[idx] > list[target_idx]: return idx
+            
+            elif list[mid] > list[target_idx] and low+1 != high:
+                low = mid
+            
+            elif list[mid] < list[target_idx]: high = mid-1
+            
+            else:
+                if(list[high] > list[target_idx]): return high
+                return low
+        
+        return high
+        
+        
+    
 
 def main():
     """
@@ -45,6 +79,7 @@ def main():
     print (test.next_perm([1,2,3]))
     print (test.next_perm([3,2,1]))
     print (test.next_perm([1,1,5]))
+    print (test.next_perm([1,5,8,4,7,6,5,3,1]))
 
 
 if __name__ == '__main__':
