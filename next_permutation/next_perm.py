@@ -17,11 +17,12 @@ class next_perm:
             
             if pre_perm[idx] > pre_perm[idx-1]:
                 
-                for jdx in range (len(pre_perm)-1, idx-1, -1):
+                #for jdx in range (len(pre_perm)-1, idx-1, -1):
+                jdx = self.get_next_biggest(pre_perm, idx-1)
                     
-                    if jdx > idx-1:
-                        pre_perm[idx-1], pre_perm[jdx] = pre_perm[jdx], pre_perm[idx-1]
-                        return self.reverse(pre_perm, idx)
+                if jdx > idx-1:
+                    pre_perm[idx-1], pre_perm[jdx] = pre_perm[jdx], pre_perm[idx-1]
+                    return self.reverse(pre_perm, idx)
                     
                 return self.reverse(pre_perm, idx)
             
@@ -39,7 +40,7 @@ class next_perm:
     def get_next_biggest(self, list, target_idx):
         
         low = target_idx+1
-        high = len(list)
+        high = len(list)-1
         mid = 0
         
         while low < high:
@@ -77,6 +78,7 @@ def main():
     print (test.next_perm([1,2,3]))
     print (test.next_perm([3,2,1]))
     print (test.next_perm([1,1,5]))
+    print (test.next_perm([1,5,8,4,7,6,5,3,1]))
 
 
 if __name__ == '__main__':
