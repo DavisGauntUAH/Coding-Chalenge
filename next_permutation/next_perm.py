@@ -36,14 +36,16 @@ class next_perm:
         r_list = r_list[:fdx] + r_list[:fdx-1:-1]
         return(r_list)
 
-#def main():
-#    """
-#    contains test cases from leet code
-#    """
-#    print (next_perm([1,2,3]))
-#    print (next_perm([3,2,1]))
-#    print (next_perm([1,1,5]))
+def main():
+    """
+    contains test cases from leet code
+    """
+    test = next_perm()
+    
+    print (test.next_perm([1,2,3]))
+    print (test.next_perm([3,2,1]))
+    print (test.next_perm([1,1,5]))
 
 
-#if __name__ == '__main__':
-#    main()
+if __name__ == '__main__':
+    main()

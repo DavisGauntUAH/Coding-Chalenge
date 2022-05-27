@@ -55,13 +55,15 @@ class longest_substring:
         
         return max_len
     
-#def main():
-#    """
-#    prints test case
-#    """
-#    print(length_of_longest_substring("abcabcbb"))
-#    print(length_of_longest_substring("bbbb"))
-#    print(length_of_longest_substring("pwwkew"))
+def main():
+    """
+    prints test case
+    """
+    test = longest_substring()
+    
+    print(test.length_of_longest_substring("abcabcbb"))
+    print(test.length_of_longest_substring("bbbb"))
+    print(test.length_of_longest_substring("pwwkew"))
 
-#if __name__ == '__main__':
-#    main()
+if __name__ == '__main__':
+    main()

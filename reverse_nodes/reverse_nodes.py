@@ -86,25 +86,6 @@ class Llist:
         return active
 
 
-#def main():
-    """
-    creates test case4s and test swap then prints results
-    """
-    
-#    sl1 = Llist()
-#    sl2 = Llist()
-#    l1 = [1,2,3,4,5]
-#    l2 = [1,2,3,4,5]
-    
-#    sl1.insert_list(l1)
-#    sl2.insert_list(l2)
-    
-#    swap(2, sl)
-#    swap(sl2, 3)
-    
-#    l_print(sl1)
-#    print("\n")
-#    l_print(sl2)
     
 
 class reverse_nodes:
@@ -159,7 +140,27 @@ class reverse_nodes:
             print(f'{active.value}')
             active = active.next_node
         print(f'{active.value}')
+        
             
+def main():
+    """
+    creates test case4s and test swap then prints results
+    """
+    
+    
+    l1 = [1,2,3,4,5]
+    l2 = [1,2,3,4,5]
+    
+    sl1 = reverse_nodes(l1)
+    sl2 = reverse_nodes(l2)
+    
+    sl1.swap(2)
+    sl2.swap(3)
+   
+    sl1.l_print()
+    print("\n")
+    sl2.l_print()
+    
 
-#if __name__ == '__main__':
-#    main()
+if __name__ == '__main__':
+    main()

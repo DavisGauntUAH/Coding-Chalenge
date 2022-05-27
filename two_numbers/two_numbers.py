@@ -39,38 +39,29 @@ class Llist:
             self.insert(val)
 
 
-#def main():
+def main():
     """
     runs leet code test and prints results
     """
-#    sl1 = Llist()
-#    sl2 = Llist()
-#    sl3 = Llist()
-#    sl4 = Llist()
-#    sl5 = Llist()
-#    sl6 = Llist()
     
-#    l1 = [2,4,3]
-#    l2 = [5,6,4]
-#    l3 = [0]
-#    l4 = [0]
-#    l5 = [9,9,9,9,9,9,9]
-#    l6 = [9,9,9,9]
+    l1 = [2,4,3]
+    l2 = [5,6,4]
+    l3 = [0]
+    l4 = [0]
+    l5 = [9,9,9,9,9,9,9]
+    l6 = [9,9,9,9]
     
-#    sl1.insert_list(l1)
-#    sl2.insert_list(l2)
-#    sl3.insert_list(l3)
-#    sl4.insert_list(l4)
-#    sl5.insert_list(l5)
-#    sl6.insert_list(l6)
+    test1 = two_numbers(l1, l2)
+    test2 = two_numbers(l3, l4)
+    test3 = two_numbers(l5, l6)
+   
+    ans1 = test1.addTwoNumbers()
+    ans2 = test2.addTwoNumbers()
+    ans3 = test3.addTwoNumbers()
     
-#   ans1 = addTwoNumbers(sl1, sl2)
-#    ans2 = addTwoNumbers(sl3, sl4)
-#    ans3 = addTwoNumbers(sl5, sl6)
-    
-#    print(l_list_to_arr(ans1))
-#    print(l_list_to_arr(ans2))
-#    print(l_list_to_arr(ans3))
+    print(test1.l_list_to_arr(ans1))
+    print(test2.l_list_to_arr(ans2))
+    print(test3.l_list_to_arr(ans3))
 
 
 
@@ -168,6 +159,6 @@ class two_numbers:
 
     
 
-#if __name__ == '__main__':
+if __name__ == '__main__':
     
-#    main()
+    main()
