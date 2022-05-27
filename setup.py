@@ -16,7 +16,9 @@ setup(
     ],
     packages=find_packages(include=['longest_substring',
                                     'next_permutation',
-                                    'reverse_nodes'
+                                    'reverse_nodes',
+                                    'two_numbers',
+                                    'zig_zag'
                                     ]),
     include_package_data=True
     
