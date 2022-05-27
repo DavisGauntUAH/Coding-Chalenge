@@ -1,3 +1,6 @@
+from functools import cache
+
+
 class Node:
     """
     contains the structure of the node of a linked list
@@ -74,14 +77,16 @@ def lList_to_int(l_list):
     count = 0
     if(l_list.head):
         active = l_list.head
-        while(active.next_node):
+        while(active):
+            if(not type(active.value) is int or active.value < 0 or active.value > 9):
+                raise Exception(f"{active.value} is not an int between 0 and 9")
+            
             num = num + (active.value * 10 ** count)
             count += 1
             active = active.next_node
-        num = num + (active.value * 10 ** count)
         return num
     else:
-        return -1
+        raise TypeError(f"{type(l_list)} is not a valid type: Llist expected")
         
 
 class two_numbers:
@@ -91,11 +96,11 @@ class two_numbers:
         values if none are given
         """
         
-        self.num1 = Llist()
-        self.num2 = Llist()
+        self.sl1 = Llist()
+        self.sl2 = Llist()
         
-        self.num1.insert_list(num1)
-        self.num2.insert_list(num2)
+        self.sl1.insert_list(num1)
+        self.sl2.insert_list(num2)
         
     
     def set_num1(self, num):
@@ -103,33 +108,38 @@ class two_numbers:
         sets num1 to the given new value
         """
         
-        self.num1.head = None
-        self.num1.insert_list(num)
+        self.sl1.head = None
+        self.sl1.insert_list(num)
     
     
     def set_num2(self, num):
         """
         sets num2 to the given new value
         """
-        self.num2.head = None
-        self.num2.insert_list(num)
+        self.sl2.head = None
+        self.sl2.insert_list(num)
     
 
-    def addTwoNumbers(self, sl1=None, sl2=None):
+    def addTwoNumbers(self):
         """
         Takes in two linked list containg ints reverses them and adds them as
         if they where ints and returns the awnser reversed as a linked list
         """
-        if not (sl1): sl1 = self.num1
-        if not (sl2): sl2 = self.num2
-        
+       
         
         num1 = 0
         num2 = 0
         ret_list = Llist()
         
-        num1 = lList_to_int(sl1)
-        num2 = lList_to_int(sl2)
+        try:
+            num1 = lList_to_int(self.sl1)
+            num2 = lList_to_int(self.sl2)
+        except Exception as err:
+            print(f"Error: {err}")
+            exit()
+            
+            
+            
         if(num1 <= -1 or num2 <= -1):
             print("invalid input!")
             return -1
@@ -152,10 +162,10 @@ class two_numbers:
         """
         arr = []
         active = l_list.head
-        arr.append(active.value)
-        while active.next_node:
-            active = active.next_node
+        while active:
             arr.append(active.value)
+            active = active.next_node
+            
         return arr
 
     

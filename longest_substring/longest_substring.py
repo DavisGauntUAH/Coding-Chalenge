@@ -50,9 +50,12 @@ def main():
     """
     test = longest_substring()
     
-    print(test.length_of_longest_substring("abcabcbb"*500000))
-    print(test.length_of_longest_substring(1))
-    print(test.length_of_longest_substring("pwwkew"))
+    try:
+        print(test.length_of_longest_substring("abcabcbb"*500000))
+        print(test.length_of_longest_substring(""))
+        print(test.length_of_longest_substring("pwwkew"))
+    except TypeError as err:
+        print(f"Error: {err}")
 
 if __name__ == '__main__':
     main()

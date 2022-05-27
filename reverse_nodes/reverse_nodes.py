@@ -49,12 +49,17 @@ class Llist:
         takes in the node befor the first node to be swap, the last node
         to be swaped, and the gap between the nodes and swaps the nodes
         """
+#        s_node = pre_s_node
         h_hold = pre_node.next_node
         s_hold = s_node.next_node
         temp = s_node
         temp.next_node = h_hold.next_node
         pre_node.next_node = temp
         h_hold.next_node = s_hold
+        
+#        if(gap == 1): pre_node.next_node.next_node = h_hold
+#        else: pre_s_node.next_node = h_hold
+        
         hold = pre_node
         for idx in range(0, gap):
             hold = hold.next_node
@@ -123,7 +128,7 @@ class reverse_nodes:
         pre_swap = active
         idx = interval
         
-        while active.next_node:
+        while active:
             
             idx+=1
             active = active.next_node
@@ -132,6 +137,9 @@ class reverse_nodes:
                 list.in_swap(pre_swap, active, interval-1)
                 active = list.get(idx)
                 pre_swap = active
+                
+            
+
                 
                 
     def l_print(self, list=None):
@@ -156,7 +164,7 @@ def main():
     """
     
     
-    l1 = [1,2,3,4,5]*500000
+    l1 = [1,2,3,4,5]*2500
     l2 = [1,2,3,4,5,6]
     expectedl3 = [3,2,1,6,5,4]
     

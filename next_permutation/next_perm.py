@@ -16,9 +16,7 @@ class next_perm:
         for idx in range(len(pre_perm)-1, 0, -1):
             
             if pre_perm[idx] > pre_perm[idx-1]:
-                
-                #for jdx in range (len(pre_perm)-1, idx-1, -1):  #to return to origin
-                #coment out line below and tab in if statement
+            
                 jdx = self.get_next_biggest(pre_perm, idx-1)
                     
                 if jdx > idx-1:
