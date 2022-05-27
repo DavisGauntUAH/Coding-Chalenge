@@ -1,4 +1,7 @@
 
+from pickle import FALSE
+
+
 class Zig_Zag:
     """
     Implements the leet code
@@ -19,30 +22,24 @@ class Zig_Zag:
         0 = down
         1 = up and across
         """
-        traverse_flag = 0 
+        traverse_flag = False 
         idx = 0
         
         while idx < len(in_str):
             
-            if traverse_flag == 0:
+            if traverse_flag == False:
+                t_funct = self.t_down
+            else:
+                t_funct = self.diagonal
                 
-                for jdx in range(0, self.zig_len):
+            for jdx in range(traverse_flag, self.zig_len - traverse_flag):
+                
+                if idx < len(in_str):
+                    t_funct(jdx, in_str[idx])
+                    idx += 1
                     
-                    if idx < len(in_str):
-                        self.t_down(jdx, in_str[idx])
-                        idx += 1
-                        
-                traverse_flag = 1
+            traverse_flag = not traverse_flag
                 
-            elif traverse_flag == 1:
-                
-                for jdx in range(1, self.zig_len-1):
-                    
-                    if idx < len(in_str):
-                        self.diagonal(jdx, in_str[idx])
-                        idx += 1
-                        
-                traverse_flag = 0
                 
         new_str = ''
         for arr in self.zig_zag_arr:

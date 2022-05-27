@@ -44,7 +44,7 @@ def main():
     runs leet code test and prints results
     """
     
-    l1 = [2,4,3]
+    l1 = []
     l2 = [5,6,4]
     l3 = [0]
     l4 = [0]
@@ -120,8 +120,9 @@ class two_numbers:
         Takes in two linked list containg ints reverses them and adds them as
         if they where ints and returns the awnser reversed as a linked list
         """
-        if(sl1 == None): sl1 = self.num1
-        if(sl2 == None): sl2 = self.num2
+        if not (sl1): sl1 = self.num1
+        if not (sl2): sl2 = self.num2
+        
         
         num1 = 0
         num2 = 0

@@ -13,22 +13,7 @@ class longest_substring:
         if not it throws an error
         """
         
-        if type(in_str) == str or in_str  == None:
-            self.str = in_str
-        else: 
-            raise TypeError(f"Invalid type: {type(in_str)} != String")
-    
-    def setStr(self, in_str):
-        """
-        sets self.str to in_str after confirming in_str is a
-        string
-        """
-        
-        if type(in_str) == str:
-            self.str = in_str
-        else: 
-            raise TypeError(f"Invalid type: {type(in_str)} != String")
-        
+        pass
 
 
     def length_of_longest_substring(self, in_str=None):
@@ -37,7 +22,11 @@ class longest_substring:
         length of the longest string withough any repeats
         """
         
-        if in_str == None: in_str = self.str
+        
+        if type(in_str) == str:
+            self.str = in_str
+        else: 
+            raise TypeError(f"Invalid type: {type(in_str)} != String")
         
         last_seen = {}
         max_len = 0
@@ -61,8 +50,8 @@ def main():
     """
     test = longest_substring()
     
-    print(test.length_of_longest_substring("abcabcbb"))
-    print(test.length_of_longest_substring("bbbb"))
+    print(test.length_of_longest_substring("abcabcbb"*500000))
+    print(test.length_of_longest_substring(1))
     print(test.length_of_longest_substring("pwwkew"))
 
 if __name__ == '__main__':

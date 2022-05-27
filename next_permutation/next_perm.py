@@ -17,7 +17,7 @@ class next_perm:
             
             if pre_perm[idx] > pre_perm[idx-1]:
                 
-                #for jdx in range (len(pre_perm)-1, idx-1, -1):  to return to origin
+                #for jdx in range (len(pre_perm)-1, idx-1, -1):  #to return to origin
                 #coment out line below and tab in if statement
                 jdx = self.get_next_biggest(pre_perm, idx-1)
                     
@@ -48,7 +48,7 @@ class next_perm:
             
             mid = (high +low) // 2
             
-            if list[target_idx]+1 == list[mid]:
+            if ord(list[target_idx])+1 == ord(list[mid]):
                 for idx in range(mid, len(list)):
                     if list[idx] <= list[target_idx]: return idx -1
                     
@@ -76,10 +76,10 @@ def main():
     """
     test = next_perm()
     
-    print (test.next_perm([1,2,3]))
-    print (test.next_perm([3,2,1]))
-    print (test.next_perm([1,1,5]))
-    print (test.next_perm([1,5,8,4,7,6,5,3,1]))
+    print (test.next_perm(['h','e','f','g']*500000))
+    print (test.next_perm(['d','h','c','k']))
+    print (test.next_perm(['d','k','h','c']))
+    #print (test.next_perm([1,5,8,4,7,6,5,3,1]))
 
 
 if __name__ == '__main__':

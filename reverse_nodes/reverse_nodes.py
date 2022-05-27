@@ -1,4 +1,7 @@
 
+from pydoc import resolve
+
+
 class Node:
     """
     contains the structure of the node of a linked list
@@ -107,6 +110,8 @@ class reverse_nodes:
         Takes in a linked list and an int containing the
         interval between in which to swap items in the linked list
         """
+        if(interval <= 1): return
+        
         if list == None: list = self.l_lst
         
         active = list.head
@@ -134,12 +139,15 @@ class reverse_nodes:
         takes in a linked list and prints out the contents
         """
         if list == None: list = self.l_lst
+        resolved = []
         
         active = list.head
-        while active.next_node:
+        while active:
             print(f'{active.value}')
+            resolved.append(active.value)
             active = active.next_node
-        print(f'{active.value}')
+
+        return resolved
         
             
 def main():
@@ -148,18 +156,19 @@ def main():
     """
     
     
-    l1 = [1,2,3,4,5]
-    l2 = [1,2,3,4,5]
+    l1 = [1,2,3,4,5]*500000
+    l2 = [1,2,3,4,5,6]
+    expectedl3 = [3,2,1,6,5,4]
     
     sl1 = reverse_nodes(l1)
     sl2 = reverse_nodes(l2)
     
-    sl1.swap(2)
+    sl1.swap(5)
     sl2.swap(3)
    
     sl1.l_print()
     print("\n")
-    sl2.l_print()
+    assert(expectedl3 == sl2.l_print())
     
 
 if __name__ == '__main__':
