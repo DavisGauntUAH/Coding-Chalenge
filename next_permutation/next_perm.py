@@ -35,6 +35,38 @@ class next_perm:
             
         r_list = r_list[:fdx] + r_list[:fdx-1:-1]
         return(r_list)
+    
+    def get_next_biggest(self, list, target_idx):
+        
+        low = target_idx+1
+        high = len(list)
+        mid = 0
+        
+        while low < high:
+            
+            mid = (high +low) // 2
+            
+            if list[target_idx]+1 == list[mid]:
+                for idx in range(mid, len(list)):
+                    if list[idx] <= list[target_idx]: return idx -1
+                    
+            elif list[target_idx] == list[mid]:
+                for idx in range(mid-1, target_idx, -1):
+                    if list[idx] > list[target_idx]: return idx
+            
+            elif list[mid] > list[target_idx] and low+1 != high:
+                low = mid
+            
+            elif list[mid] < list[target_idx]: high = mid-1
+            
+            else:
+                if(list[high] > list[target_idx]): return high
+                return low
+        
+        return high
+        
+        
+    
 
 def main():
     """
