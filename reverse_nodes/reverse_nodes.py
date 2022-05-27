@@ -86,64 +86,80 @@ class Llist:
         return active
 
 
-def main():
+#def main():
     """
     creates test case4s and test swap then prints results
     """
     
-    sl1 = Llist()
-    sl2 = Llist()
-    l1 = [1,2,3,4,5]
-    l2 = [1,2,3,4,5]
+#    sl1 = Llist()
+#    sl2 = Llist()
+#    l1 = [1,2,3,4,5]
+#    l2 = [1,2,3,4,5]
     
-    sl1.insert_list(l1)
-    sl2.insert_list(l2)
+#    sl1.insert_list(l1)
+#    sl2.insert_list(l2)
     
-    swap(sl1, 2)
-    swap(sl2, 3)
+#    swap(2, sl)
+#    swap(sl2, 3)
     
-    l_print(sl1)
-    print("\n")
-    l_print(sl2)
+#    l_print(sl1)
+#    print("\n")
+#    l_print(sl2)
     
 
+class reverse_nodes:
+    """
+    Object to reverse the nodes at a given increment of
+    a linked list
+    """
+    
+    def __init__ (self, lst):
+        """
+        creates a reverse node object
+        """
+        
+        self.l_lst = Llist()
+        self.l_lst.insert_list(lst)
 
-def swap(list, interval):
-    """
-    Takes in a linked list and an int containing the
-    interval between in which to swap items in the linked list
-    """
-    active = list.head
-    for idx in range(0, interval-1):
-        active = active.next_node
-    list.swap(active, interval-2)
-    
-    active = list.get(interval)
-    pre_swap = active
-    idx = interval
-    
-    while active.next_node:
+    def swap(self, interval, list=None):
+        """
+        Takes in a linked list and an int containing the
+        interval between in which to swap items in the linked list
+        """
+        if list == None: list = self.l_lst
         
-        idx+=1
-        active = active.next_node
+        active = list.head
+        for idx in range(0, interval-1):
+            active = active.next_node
+        list.swap(active, interval-2)
         
-        if idx%interval == 0:
-            list.in_swap(pre_swap, active, interval-1)
-            active = list.get(idx)
-            pre_swap = active
+        active = list.get(interval)
+        pre_swap = active
+        idx = interval
+        
+        while active.next_node:
             
+            idx+=1
+            active = active.next_node
             
-def l_print(list):
-    """
-    takes in a linked list and prints out the contents
-    """
-    
-    active = list.head
-    while active.next_node:
+            if idx%interval == 0:
+                list.in_swap(pre_swap, active, interval-1)
+                active = list.get(idx)
+                pre_swap = active
+                
+                
+    def l_print(self, list=None):
+        """
+        takes in a linked list and prints out the contents
+        """
+        if list == None: list = self.l_lst
+        
+        active = list.head
+        while active.next_node:
+            print(f'{active.value}')
+            active = active.next_node
         print(f'{active.value}')
-        active = active.next_node
-    print(f'{active.value}')
             
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+#    main()
