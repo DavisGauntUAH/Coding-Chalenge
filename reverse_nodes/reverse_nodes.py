@@ -70,7 +70,7 @@ class Llist:
         y_node.next_node = temp
         
     
-    def swap(self, s_node, gap):
+    def h_swap(self, s_node, gap):
         """
         swapes the first node and a later node
         takes in node to be swaped with and the gap between it and the first
@@ -127,7 +127,7 @@ class reverse_nodes:
         active = list.head
         for idx in range(0, interval-1):
             active = active.next_node
-        list.swap(active, interval-2)
+        list.h_swap(active, interval-2)
         
         active = list.get(interval)
         pre_swap = active
@@ -140,7 +140,7 @@ class reverse_nodes:
             
             if idx%interval == 0:
                 if(active.next_node): list.in_swap(pre_swap, active, interval-1)
-                active = list.get(idx)
+                #active = list.get(idx)
                 pre_swap = active.next_node
                 
             active = active.next_node
@@ -169,7 +169,7 @@ def main():
     """
     
     
-    l1 = [1,2,3,4,5]*5000
+    l1 = [1,2,3,4,5]*500000
     l2 = [1,2,3,4,5,6]
     expectedl3 = [3,2,1,6,5,4]
     
