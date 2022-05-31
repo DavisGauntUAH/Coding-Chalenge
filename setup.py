@@ -27,6 +27,6 @@ setup(
                                     'two_numbers',
                                     'zig_zag'
                                     ]),
-    include_package_data=True
-    
+    include_package_data=True,
+    install_requires=install_requires,
 )

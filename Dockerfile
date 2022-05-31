@@ -1,6 +1,10 @@
-FROM python:3.9
+FROM jupyter/base-notebook
 COPY . /app
 WORKDIR /app
+
+USER root
+
+#RUN apt-get install python
 RUN python setup.py install
 # RUN python ./longest_substring/longest_substring.py
 # RUN python ./next_permutation/next_perm.py
