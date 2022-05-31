@@ -39,8 +39,18 @@ class Llist:
         takes in a list and appends the whole list to the end of 
         the linked list
         """
+        active  = None
+        
         for val in val_list:
-            self.insert(val)
+            
+            if(self.head):
+                active.next_node = Node(val)
+                active = active.next_node
+            else:
+                self.head = Node(val)
+                active = self.head
+            
+            #self.insert(val)
             
             
     def in_swap(self,pre_x_node, pre_y_node, gap):
@@ -159,7 +169,7 @@ def main():
     """
     
     
-    l1 = [1,2,3,4,5]
+    l1 = [1,2,3,4,5]*5000
     l2 = [1,2,3,4,5,6]
     expectedl3 = [3,2,1,6,5,4]
     
