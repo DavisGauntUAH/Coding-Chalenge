@@ -1,5 +1,12 @@
 #!/usr/bin/env python
+from os import path
 from setuptools import setup, find_packages
+here = path.abspath(path.dirname(__file__))
+
+
+with open(path.join(here, 'requirements.txt'), encoding='utf-8') as f:
+    all_reqs = f.read().split('\n')
+install_requires = [x.strip() for x in all_reqs]
 
 setup(
     name='coding-chalenge',
