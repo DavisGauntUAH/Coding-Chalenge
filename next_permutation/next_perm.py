@@ -77,7 +77,6 @@ def main():
     print (test.next_perm(['h','e','f','g']*500000))
     print (test.next_perm(['d','h','c','k']))
     print (test.next_perm(['d','k','h','c']))
-    #print (test.next_perm([1,5,8,4,7,6,5,3,1]))
 
 
 if __name__ == '__main__':

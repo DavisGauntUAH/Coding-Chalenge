@@ -47,7 +47,7 @@ def main():
     runs leet code test and prints results
     """
     
-    l1 = []
+    l1 = [2,4,3]
     l2 = [5,6,4]
     l3 = [0]
     l4 = [0]
