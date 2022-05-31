@@ -43,21 +43,21 @@ class Llist:
             self.insert(val)
             
             
-    def in_swap(self,pre_node, pre_s_node, gap):
+    def in_swap(self,pre_x_node, pre_y_node, gap):
         """
         swaps interior nodes
         takes in the node befor the first node to be swap, the last node
         to be swaped, and the gap between the nodes and swaps the nodes
         """
-        s_node = pre_s_node.next_node
-        h_hold = pre_node.next_node
+        y_node = pre_y_node.next_node
+        x_hold = pre_x_node.next_node
         
-        pre_node.next_node = s_node
-        pre_s_node.next_node = h_hold
+        pre_x_node.next_node = y_node
+        pre_y_node.next_node = x_hold
         
-        temp = h_hold.next_node
-        h_hold.next_node = s_node.next_node
-        s_node.next_node = temp
+        temp = x_hold.next_node
+        x_hold.next_node = y_node.next_node
+        y_node.next_node = temp
         
     
     def swap(self, s_node, gap):
@@ -159,7 +159,7 @@ def main():
     """
     
     
-    l1 = [1,2,3,4,5]*50000
+    l1 = [1,2,3,4,5]
     l2 = [1,2,3,4,5,6]
     expectedl3 = [3,2,1,6,5,4]
     
@@ -169,7 +169,7 @@ def main():
     sl1.swap(2)
     sl2.swap(3)
    
-    #sl1.l_print()
+    sl1.l_print()
     print("\n")
     assert(expectedl3 == sl2.l_print())
     
