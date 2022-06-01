@@ -14,8 +14,8 @@ FROM jupyter/base-notebook
 
 
 
-USER jovyan
-WORKDIR /home/jovyan
+#USER jovyan
+#WORKDIR /home/jovyan
 
 COPY . /home/jovyan/app
 COPY ./examples /home/jovyan/
@@ -24,6 +24,3 @@ RUN chmod 777 ./app
 USER jovyan
 
 RUN cd app && python setup.py install
-
-# ENV JUPYTER_ENABLE_LAB=no
-# CMD ["echo", "worked"]
